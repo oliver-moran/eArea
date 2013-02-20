@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>eArea Example</title>
+</head>
+
+<body>
+
+<!-- START OF EDITABLE AREA CODE -->
+<script language="javascript" type="text/javascript" src="eArea/editableArea.js"></script>
+<script language="javascript">
+	insertEditableArea(
+		"myEditArea", 	// the name of this editable area
+		300, 			// the width of the editable area
+		200, 			// the height of the editable area
+		
+		// A string describing how to layout the editable area in HTML format:
+		//   - tags representing possible buttons are:
+		//       [bold], [italic], [underlined], [align-left], [justify], [align-center], [align-right]
+		//   - don't forget to include [edit-area] to indicate where the editable area should go
+		//   - you can include your own HTML / CSS / JavaScript
+		"[bold][italic][underlined][align-left][justify][align-center][align-right]<br />[edit-area]",
+		
+		// A string describing the font style of the editable area:
+		//   - the font should be described in CSS format:
+		//       e.g. "font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:Black;"
+		//   - this style will not be represented in the output of the editable text area
+		//   - background-colour etc. will not be defined by this string because editable areas are transparent
+		//   - leave blank (i.e. ""), if you do not want to define a style
+		"font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; color:Black;"
+	);
+	
+	// To retrieve the HTML contents of this editable area call editableAreaContents(string) from JavaScript:
+	//   - e.g. for a editable area called "foo", call editableAreaContents("foo")
+</script>
+<!-- END OF EDITABLE AREA CODE -->
+
+<br />
+<input type="button" value="See Contents" onClick="javascript:alert( editableAreaContents('myEditArea') );" />
+
+</body>
+</html>
